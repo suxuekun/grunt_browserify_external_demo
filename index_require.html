@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ES6</title>
+        <script src="node_modules/requirejs/require.js"  ></script>
+              
+    </head>
+    <body>
+    	<script>
+    		require.config({
+    			baseUrl:'dist',
+   				paths:{
+   					'moment':'../node_modules/moment/moment',
+   					'echarts':'../node_modules/echarts/dist/echarts',
+					'jquery':'../node_modules/jquery/dist/jquery',
+					'bundle':'techstudio.wilas',
+					'co':'techstudio.wilas.components',
+				}
+			});
+   //  		require.config({
+			// 	baseUrl:"build",
+			// 	path:{
+			// 		'bundle':'bundle',
+			// 	}
+			// });
+
+			require(['jquery','echarts','moment'],function($,ec,mo){
+				if (window.echarts == null) window.echarts = ec;
+				if (window.moment == null) window.moment = mo;
+				console.log('req',$);
+				console.log('window',window);
+				console.log('window=req',window.$ == $);
+
+				require(['bundle'],function(bundle){
+					require(['co'],function(co){
+						console.log('co',co);
+					})
+					console.log(bundle);
+					console.log(window);
+
+				})
+			});
+
+
+    	</script>
+    </body>
+</html>
