@@ -1,14 +1,14 @@
 {
-  "name": "wilas",
-  "version": "1.0.0",
-  "description": "techstudio.wilas.js,wilas core js functions",
+  "name": "grunt_browserify_external_demo",
+  "version": "1.0.1",
+  "description": "demo, template of gunt browserify with external libs",
   "main": "dist/techstudio.wilas.js",
   "subs":{
     "components":"dist/techstudio.wilas.components.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel --optional runtime -d src/es5 src/es6",
+    // "transpile": "babel --optional runtime -d src/es5 src/es6",
     "compile": "grunt"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "wilas"
   ],
   "author": "sillyboy",
-  "license": "LGPL",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/suxuekun/grunt_browserify_external_demo/issues"
   },
